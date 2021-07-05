@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int countConsistentStrings(string allowed, vector<string>& words) {
+        
+        map<char, int> m;
+for (auto i : allowed)
+{
+m[i] = 1;
+}
+int count = 0;
+for (auto i : words)
+{
+int a = 1;
+for (auto j : i)
+{
+if (m[j] == 0)
+{
+a = 0;
+break;
+}
+}
+if(a==1)
+{
+count++;
+}
+}
+return count;
+        
+    }
+};

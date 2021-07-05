@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string truncateSentence(string s, int k) {
+         int count=0;
+        string newstr={};
+        int i=0;
+        while(count<k && i<s.length())
+        {
+            int c=s[i];
+            if(isspace(c))
+                count++;
+            if(count<k)
+                newstr +=c;
+            
+            i++;
+        }
+        return newstr;
+    }
+};
